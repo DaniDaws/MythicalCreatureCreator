@@ -40,10 +40,13 @@ function generateCreature(species = "creature") {
     creatureData.abilities[generateRandomNumber(creatureData.abilities.length)];
   const creatureOrigin =
     creatureData.origin[generateRandomNumber(creatureData.origin.length)];
+  const creatureDescription = `A ${creatureAppearance}, ${creatureAbility} ${species} ${creatureOrigin}!`;
+
   return {
     species,
     appearance: creatureAppearance,
     ability: creatureAbility,
     origin: creatureOrigin,
+    description: creatureDescription,
   };
 }
