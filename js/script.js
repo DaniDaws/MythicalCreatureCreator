@@ -50,3 +50,10 @@ function generateCreature(species = "creature") {
     description: creatureDescription,
   };
 }
+
+document
+  .getElementById("generateButton")
+  .addEventListener("click", function () {
+    const creature = generateCreature();
+    document.getElementById("creature").textContent = creature.description;
+  });
