@@ -64,4 +64,5 @@ document
 
     const creature = generateCreature(species);
     document.getElementById("creature").textContent = creature.description;
+    document.getElementById("speciesInput").value = "";
   });
