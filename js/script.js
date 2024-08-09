@@ -55,6 +55,11 @@ document
   .getElementById("generateButton")
   .addEventListener("click", function () {
     const speciesInput = document.getElementById("speciesInput").value.trim();
+    const validSpecies = /^[a-zA-Z\s]*$/.test(speciesInput);
+    if (!validSpecies) {
+      alert("Please enter a valid species name (letters and spaces only).");
+      return;
+    }
     const species = speciesInput !== "" ? speciesInput : "creature";
 
     const creature = generateCreature(species);
