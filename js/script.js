@@ -2,7 +2,7 @@ function generateRandomNumber(num) {
   return Math.floor(Math.random() * num);
 }
 
-function generateCreature(species = "creature") {
+function generateCreature(species) {
   const creatureData = {
     appearance: [
       "winged",
@@ -54,6 +54,9 @@ function generateCreature(species = "creature") {
 document
   .getElementById("generateButton")
   .addEventListener("click", function () {
-    const creature = generateCreature();
+    const speciesInput = document.getElementById("speciesInput").value.trim();
+    const species = speciesInput !== "" ? speciesInput : "creature";
+
+    const creature = generateCreature(species);
     document.getElementById("creature").textContent = creature.description;
   });
